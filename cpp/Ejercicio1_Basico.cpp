@@ -9,8 +9,18 @@ struct NodoN {
 };
 
 int contarNodos(NodoN* raiz) {
-    // TODO: Implementa tu lógica aquí
-    return 0;
+    if (raiz == nullptr) {
+        return 0;
+    }
+    
+    int contador = 1; // Contamos el nodo actual
+    
+    // Iteramos sobre todos los hijos y sumamos recursivamente
+    for (NodoN* hijo : raiz->hijos) {
+        contador += contarNodos(hijo);
+    }
+    
+    return contador;
 }
 
 int main() {

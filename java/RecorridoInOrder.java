@@ -3,7 +3,18 @@ import java.util.List;
 
 public class  RecorridoInOrder {
     public static void inOrderAux(Nodo nodo, List<Integer> resultado) {
-        // TODO: Implementa tu lógica de recorrido aquí
+        if (nodo == null) {
+            return;
+        }
+        
+        // 1. Recorrer el subárbol izquierdo
+        inOrderAux(nodo.izquierdo, resultado);
+        
+        // 2. Agregar el valor del nodo actual a la lista
+        resultado.add(nodo.valor);
+        
+        // 3. Recorrer el subárbol derecho
+        inOrderAux(nodo.derecho, resultado);
     }
 
     public static List<Integer> recorridoInOrder(Nodo raiz) {

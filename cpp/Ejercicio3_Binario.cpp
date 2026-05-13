@@ -11,8 +11,12 @@ struct Nodo {
 };
 
 int calcularAltura(Nodo* raiz) {
-    // TODO: Implementa tu lógica aquí
-    return 0;
+    if (raiz == nullptr) {
+        return 0;
+    }
+    
+    // Calculamos la altura de cada subárbol recursivamente usando std::max
+    return 1 + std::max(calcularAltura(raiz->izquierdo), calcularAltura(raiz->derecho));
 }
 
 int main() {
