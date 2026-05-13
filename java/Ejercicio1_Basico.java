@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-class NodoN {
+static class NodoN {
     public int valor;
     public List<NodoN> hijos;
     
@@ -50,4 +50,3 @@ public static int contarNodos(NodoN raiz) {
         System.out.println("Nodos esperados: 6");
         System.out.println("Nodos calculados: " + contarNodos(raiz));
     }
-}
